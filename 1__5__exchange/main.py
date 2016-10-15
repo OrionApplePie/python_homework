@@ -12,7 +12,7 @@ curr_codes = {"USD": "R01235", "EUR": "R01239", "JPY": "R01820", "GBP": "R01035"
 date = date.today().strftime("%d/%m/%Y")
 str = "http://www.cbr.ru/scripts/XML_daily.asp?date_req"+"="+date
 
-# программа выполняется пока не введено 'x'
+# программа выполняется пока не введено 'x' или что-то еще кроме кодов валют
 while True:
     print("Введите код валюты или 'x' для выхода")
     keys = curr_codes.keys()
