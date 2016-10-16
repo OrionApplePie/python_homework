@@ -2,7 +2,7 @@ import random
 import math
 
 
-# генерация точек со случайными координатами
+# Генерация точек со случайными координатами
 file = open('dots.txt', 'w')
 num = 10
 x, y = 0, 0
@@ -14,12 +14,12 @@ for i in range(num):
 file.close()
 
 
-# списки для координат из файла
+# Чтение координат из файла
+# Списки для координат из файла
 dot_x = []
 dot_y = []
-file = open('dots2.txt', 'r')  # либо dots.txt
+file = open('dots2.txt', 'r')  # Либо dots.txt
 
-# чтение из файла
 for line in file:
     n1, n2 = line.split(' ')
     dot_x.append(float(n1))
@@ -30,18 +30,18 @@ print("точки: ")
 print("x: ", dot_x)
 print("y: ", dot_y)
 
-# список для расстояний м/у точками
+# Список для расстояний м/у точками
 distance = []
 l = len(dot_x)
 for i in range(l):
-    for j in range(i, l, 1):  # начать с i-той, чтобы не вычислять уже вычисленное
+    for j in range(i, l, 1):  # Начать с i-той, чтобы не вычислять уже вычисленное
         if i != j:
             distance.append(math.sqrt(math.pow((dot_x[i] - dot_x[j]), 2.0) + math.pow((dot_y[i] - dot_y[j]), 2.0)))
 print("расст.: ",  distance)
-min = min(distance)
-print('минимальное расст.: ' + str(min))
-max = max(distance)
-print('максимальное расст.: ' + str(max))
+min_dist = min(distance)
+print('минимальное расст.: ' + str(min_dist))
+max_dist = max(distance)
+print('максимальное расст.: ' + str(max_dist))
 
-#  для проверки - расстояния для точек из файла dots2.txt вычисленные вручную
+#  Для проверки - расстояния для точек из файла dots2.txt вычисленные вручную
 print(math.sqrt(2), math.sqrt(13), math.sqrt(29), math.sqrt(5), math.sqrt(17), math.sqrt(10))
